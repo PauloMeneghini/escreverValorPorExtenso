@@ -2,39 +2,33 @@
 
 valorDigitado = input("Digite um valor (Separando por ',' a casa dos centavos): ")
 
-print(valorDigitado)
-print(type(valorDigitado))
-
 valor = valorDigitado.split(",")
 valorReal = int(valor[0])
 valorCentavo = int(valor[1])
 
+
 unidadeCentavo=int(valorCentavo%10)
 dezenaCentavo=int((valorCentavo-unidadeCentavo)/10)%10
 
-print(dezenaCentavo)
-print(unidadeCentavo)
-
-
 # ESCREVE EXTENSO REAL 
 
-if valorReal == 1:
+if valorReal == 1 or valorReal == -1:
     auxiliarReal = "um"
-elif valorReal == 2:
+elif valorReal == 2 or valorReal == -2:
     auxiliarReal = "dois"
-elif valorReal == 3:
+elif valorReal == 3 or valorReal == -3:
     auxiliarReal = "três"
-elif valorReal == 4:
+elif valorReal == 4 or valorReal == -4:
     auxiliarReal = "quatro"
-elif valorReal == 5:
+elif valorReal == 5 or valorReal == -5:
     auxiliarReal = "cinco"
-elif valorReal == 6:
+elif valorReal == 6 or valorReal == -6:
     auxiliarReal = "seis"
-elif valorReal == 7:
+elif valorReal == 7 or valorReal == -7:
     auxiliarReal = "sete"
-elif valorReal == 8:
+elif valorReal == 8 or valorReal == -8:
     auxiliarReal = "oito"
-elif valorReal == 9:
+elif valorReal == 9 or valorReal == -9:
     auxiliarReal = "nove"
 
 if valorReal == 1:
@@ -113,7 +107,7 @@ if valorCentavo == 1:
 else:
     textoCentavos = " centavos"
 
-if valorReal > 0:
+if valorReal:
     textoValorReal = auxiliarReal + textoReal
 else:
     textoReal = ""
@@ -123,8 +117,11 @@ if valorCentavo > 0:
 else:
     textoValorCentavo = ""
 
-if valorReal > 0 and valorCentavo > 0:
-    resultado = textoValorReal + " e " + textoValorCentavo
+if valorReal and valorCentavo:
+    if valorReal < 0:
+        resultado = "menos " + textoValorReal + " e " + textoValorCentavo
+    else:
+        resultado = textoValorReal + " e " + textoValorCentavo
 else:
     resultado = textoValorReal + textoValorCentavo
 
