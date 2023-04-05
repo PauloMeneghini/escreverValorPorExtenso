@@ -1,1 +1,1 @@
-auxunidadeCentavo
+valorCentavoExtenso
